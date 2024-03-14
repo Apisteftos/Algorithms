@@ -1,4 +1,4 @@
-# Here inside there are varieties of C++ algorithms
+# Varieties of C++ algorithms
 
 
 -Dijkstra
