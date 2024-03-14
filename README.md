@@ -1,5 +1,6 @@
 # Varieties of C++ algorithms
 
 
--Dijkstra  
--Quicksort
+-Dijkstra <br>
+-Quicksort <br>
+
