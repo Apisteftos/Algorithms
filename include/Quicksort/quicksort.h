@@ -11,7 +11,7 @@ class QuicksortAlg{
 private: 
 
    
-    int partition(std::vector<int> arr, int lo, int hi);
+    int partition(std::vector<int>& arr, int lo, int hi);
 
 
 public: 
@@ -20,7 +20,7 @@ public:
 
     
     
-    void quickSort(std::vector<int> arr, int lo, int hi);
+    void quickSort(std::vector<int>& arr, int lo, int hi);
 
     void swap(int & arr1, int & arr2);
 
