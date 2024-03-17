@@ -1,4 +1,5 @@
-#include "../include/Quicksort/quicksort.h"
+#include <QuicksortLomuto/quicksort.h>
+#include <QuicksortHoare/quicksortHoare.h>
 
 
 
@@ -13,16 +14,27 @@ int main(){
     std::vector<int> mergArr = {7, 8, 1, 0, 6, 10, 34, 5, 73, 12, 44};
 
 
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*          Quick Sort Hoare algorithm                 */
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+    std::vector<int> arr2 = {7, 8, 1, 0, 6, 10, 34, 5, 73, 12, 44};
+    int hi2 = arr2.size();
+
+    std::cout <<"##################### Quicksort Hoare Algorithm ######################" << std::endl;
+    
+    
+
 
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-    /*          Quick Sort algorithm                       */
+    /*          Quick Sort Lomuto algorithm                */
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
     
 
     std::vector<int> arr = {7, 8, 1, 0, 6, 10, 34, 5, 73, 12, 44};
     int hi = arr.size();
 
-    std::cout <<"##################### Quicksort Algorithm ######################" << std::endl;
+    std::cout <<"##################### Quicksort Lomuto Algorithm ######################" << std::endl;
     
     std::cout << "\nUnsorted array: ";
     for(int i = 0; i < hi; i++){

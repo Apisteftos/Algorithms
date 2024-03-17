@@ -2,19 +2,24 @@
 CXX := g++
 
 # Compiler flags
-CXXFLAGS := -std=c++11 -Wall -Wextra -g 
+CXXFLAGS := -std=c++11 -Wall -Wextra  -g 
 
 # Directories
 SRC_DIR := src
-QUICKSORT_DIR := include/Quicksort
+INCLUDE_DIR := include
+QUICKSORTLOMUTO_DIR := include/QuicksortLomuto
+QUICKSORTHOARE_DIR := include/QuicksortHoare
 DOCS_DIR := docs
 BUILD_DIR := build
 
 # Source files
-SRCS := $(wildcard $(SRC_DIR)/*.cpp)   $(wildcard $(QUICKSORT_DIR)/*.cpp)
+SRCS := $(wildcard $(SRC_DIR)/*.cpp)
+SRCS += $(wildcard $(INCLUDE_DIR)/*.cpp)
+SRCS += $(wildcard $(QUICKSORTLOMUTO_DIR)/*.cpp)
+SRCS += $(wildcard $(QUICKSORTHOARE_DIR)/*.cpp)
 
 # Object files
-#OBJS = $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(SRCS)) 
+#OBJS := $(patsubst $(SRC_DIR)/%.cpp,$(BUILD_DIR)/%.o,$(SRCS))
 OBJS := $(SRCS:.cpp=.o)
 
 # Executable name
@@ -26,13 +31,14 @@ TARGET := main
 # Default target
 all: $(TARGET)
 
+# Rule to build the executable
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) $^ -o $@ 
+
 # Compile source files into object files
 %.o: %.cpp
-	$(CXX)	$(CXXFLAGS)	-I$(QUICKSORT_DIR) -c $< -o $@
+	$(CXX)	$(CXXFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
-# Link object files into executable
-$(TARGET): $(OBJS)
-	$(CXX) $(OBJS) -o $(TARGET)
 
 # Clean generated files
 clean:

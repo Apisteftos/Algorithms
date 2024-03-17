@@ -1,5 +1,5 @@
-#ifndef QUICKSORT_H
-#define QUICKSORT_H
+#ifndef QUICKSORTLEMUTO_H
+#define QUICKSORTLEMUTO_H
 
 #include <iostream>
 #include <array>
@@ -30,4 +30,4 @@ public:
 
 };
 
-#endif /* QUICKSORT_H */
+#endif /* QUICKSORTLEMUTO_H */
