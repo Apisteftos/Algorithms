@@ -10,6 +10,7 @@ INCLUDE_DIR := include
 QUICKSORTLOMUTO_DIR := include/QuicksortLomuto
 QUICKSORTHOARE_DIR := include/QuicksortHoare
 QUICKSORTFAT_DIR := include/QuicksortFat
+BUBBLESORT_DIR := include/BubbleSort
 DOCS_DIR := docs
 BUILD_DIR := build
 
@@ -19,6 +20,7 @@ SRCS += $(wildcard $(INCLUDE_DIR)/*.cpp)
 SRCS += $(wildcard $(QUICKSORTLOMUTO_DIR)/*.cpp)
 SRCS += $(wildcard $(QUICKSORTHOARE_DIR)/*.cpp)
 SRCS += $(wildcard $(QUICKSORTFAT_DIR)/*.cpp)
+SRCS += $(wildcard $(BUBBLESORT_DIR)/*.cpp)
 
 
 # Object files

@@ -1,6 +1,7 @@
 #include <QuicksortLomuto/quicksort.h>
 #include <QuicksortHoare/quicksortHoare.h>
 #include <QuicksortFat/quicksortFat.h>
+#include <BubbleSort/bubblesort.h>
 
 
 
@@ -11,6 +12,33 @@ int main(){
     /*******************************************************/
 
     std::vector<int> mergArr = {7, 8, 1, 0, 6, 10, 34, 5, 73, 12, 44};
+
+
+
+
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*                                 Bubble Sort  Algorithm                                          */
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+    std::vector<int> bubblevec = {5, 0, 5, 38, 999, 22, 8, 4, 11, 13, 16, 9};
+
+    std::cout << "\nUnsorted array: ";
+    for(int i = 0; i < bubblevec.size(); i++){
+        std::cout << bubblevec[i] << " ";
+    }
+
+    Bubblesort bubble;
+    
+    
+    // Print the sorted array
+    std::cout << "\nSorted array: ";
+    for (int i = 0; i < bubblevec.size(); i++) {
+        std::cout << bubblevec[i] << " ";
+    }
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+
 
 
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
