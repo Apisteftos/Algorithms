@@ -22,13 +22,15 @@ int main(){
 
     std::vector<int> bubblevec = {5, 0, 5, 38, 999, 22, 8, 4, 11, 13, 16, 9};
 
+    std::cout <<"####################### Bubble Sort Algorithm ##########################" << std::endl;
+
     std::cout << "\nUnsorted array: ";
     for(int i = 0; i < bubblevec.size(); i++){
         std::cout << bubblevec[i] << " ";
     }
 
-    Bubblesort bubble;
-    
+    Bubblesort bubble = Bubblesort();
+    bubble.bubblesort(bubblevec);
     
     // Print the sorted array
     std::cout << "\nSorted array: ";
