@@ -3,4 +3,7 @@
 
 -Dijkstra <br>
 -Quicksort <br>
+-Bubblesort <br>
+-Mergesort <br>
+
 
