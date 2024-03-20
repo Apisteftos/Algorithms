@@ -82,7 +82,7 @@ int main(){
     std::vector<int> arr2 = {4, 333, 9, 0, 1, 55, 77, 38, 3, 5, 23};
     int hi2 = arr2.size();
 
-    std::cout <<"##################### Quicksort Hoare Algorithm #######################" << std::endl;
+    std::cout <<"##################### Quicksort Hoare Algorithm ########################" << std::endl;
     
     std::cout << "\nUnsorted array: ";
     for(int i = 0; i < hi2; i++){
