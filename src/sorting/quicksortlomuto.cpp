@@ -1,4 +1,4 @@
-#include "quicksort.h"
+#include "sorting/quicksortlomuto.h"
 
 QuicksortAlg::QuicksortAlg(){}
 

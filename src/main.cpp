@@ -1,7 +1,7 @@
-#include <QuicksortLomuto/quicksort.h>
-#include <QuicksortHoare/quicksortHoare.h>
-#include <QuicksortFat/quicksortFat.h>
-#include <BubbleSort/bubblesort.h>
+#include <sorting/quicksortlomuto.h>
+#include <sorting/quicksorthoare.h>
+#include <sorting/quicksortfat.h>
+#include <sorting/bubblesort.h>
 
 
 

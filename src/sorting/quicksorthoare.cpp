@@ -1,4 +1,4 @@
-#include "quicksortHoare.h"
+#include "sorting/quicksorthoare.h"
 
 
 QuickSortHoare::QuickSortHoare(){}
