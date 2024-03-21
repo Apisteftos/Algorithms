@@ -24,5 +24,4 @@ add_executable(main
               ${HEADER_FILES})
 
 
-# Adding targets
-#target_include_directories(main PUBLIC include)
+
