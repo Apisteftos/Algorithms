@@ -23,11 +23,13 @@ class Kernel{
         void printKernel();
         void setKernelSize(const KernelSize &ksz);
         float GaussianFunction(int x, int y, float sigma);
-        float Normalize(float a, float b); 
+        float GaussianSum(std::set<std::tuple<int, int>> kernel, float sigma);
+        float Normalize(std::set<std::tuple<int, int>> kernel, float sum, float sigma); 
         std::set<std::tuple<int, int>> SizeThreeXThree();
         std::set<std::tuple<int, int>> SizeFiveXFive();
         std::set<std::tuple<int, int>> SizeNineXNine();
         std::set<std::tuple<int, int>> SizeFifteenXFifteen();
+        
         ~Kernel();
 
 };

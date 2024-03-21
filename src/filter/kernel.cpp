@@ -99,8 +99,32 @@ float Kernel::GaussianFunction(int x, int y, float sigma)
 }
 
 
-float Kernel::Normalize(float a, float b){
-    return a/b;
+float Kernel::GaussianSum(std::set<std::tuple<int, int>> kernel, float sigma){
+    float sum = 0.0f;
+
+    
+    for(const auto & point: kernel){
+        int point0 = std::get<0>(point);
+        int point1 = std::get<1>(point);
+        float gaussian = GaussianFunction(point0, point1, sigma);
+        sum += gaussian;
+    }
+
+}
+
+
+float Kernel::Normalize(std::set<std::tuple<int, int>> kernel, float sum, float sigma){
+    
+    for(const auto & point: kernel){
+        int point0 = std::get<0>(point);
+        int point1 = std::get<1>(point);
+        float gaussian = GaussianFunction(point0, point1, sigma);
+        float norm_gaussian =  gaussian/sum;
+        std::cout << norm_gaussian << std::endl;
+    }
+
+
+
 }
 
 

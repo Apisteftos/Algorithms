@@ -2,7 +2,7 @@
 #include <sorting/quicksorthoare.h>
 #include <sorting/quicksortfat.h>
 #include <sorting/bubblesort.h>
-#include <filter/gaussian.h>
+#include <filter/kernel.h>
 
 
 
@@ -13,9 +13,16 @@ int main(){
     /*                                       Gaussian Filter                                           */
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
+    float sigma = 1.0f;
+    Kernel kernel = Kernel(KernelSize::ThreeXThree);
+    kernel.printKernel();
+    std::cout << std::endl;
+    std::set<std::tuple<int, int>> threeXthreeKernel = kernel.SizeThreeXThree();
+    float sum = kernel.GaussianSum(threeXthreeKernel, sigma);   
+    float normalize =  kernel.Normalize(threeXthreeKernel, sum, sigma);
     
 
-    
+
 
 
 
