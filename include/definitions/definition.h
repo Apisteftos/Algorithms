@@ -3,10 +3,10 @@
 
 enum class KernelSize{
 
-    ThreeXThree,
-    FiveXFive,
-    NineXNine,
-    FifteenXFifteen
+    ThreeXThree = 3,
+    FiveXFive = 5,
+    NineXNine = 9,
+    FifteenXFifteen = 15
 
 };
 

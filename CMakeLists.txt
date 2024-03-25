@@ -13,15 +13,26 @@ project(Algorithms VERSION 1.0)
 # Globbing all header files
 file(GLOB_RECURSE  HEADER_FILES include/*.h)
 
+# Find openCV package
+find_package(OpenCV REQUIRED)
+
+
+# include directories
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+
 
 # Adding source files 
 add_executable(main
               src/sorting/bubblesort.cpp
               src/sorting/quicksortfat.cpp 
               src/sorting/quicksorthoare.cpp 
-              src/sorting/quicksortlomuto.cpp 
+              src/sorting/quicksortlomuto.cpp
+              src/filter/kernel.cpp
+              src/filter/convolution.cpp 
               src/main.cpp
               ${HEADER_FILES})
 
 
+# Linking the libs
+target_link_libraries(main ${OpenCV_LIBS})
 

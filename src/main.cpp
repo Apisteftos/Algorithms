@@ -2,7 +2,7 @@
 #include <sorting/quicksorthoare.h>
 #include <sorting/quicksortfat.h>
 #include <sorting/bubblesort.h>
-#include <filter/kernel.h>
+#include <filter/convolution.h>
 
 
 
@@ -14,10 +14,15 @@ int main(){
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
     float sigma = 1.0f;
+    const int stride = 1;
+    std::vector<float> norm_gaussian;
+    //Convolution conv;
     Kernel kernel = Kernel(KernelSize::ThreeXThree);
     kernel.printKernel();
     std::cout << std::endl;
     std::set<std::tuple<int, int>> threeXthreeKernel = kernel.SizeThreeXThree();
+
+
     float sum = kernel.GaussianSum(threeXthreeKernel, sigma);   
     float normalize =  kernel.Normalize(threeXthreeKernel, sum, sigma);
     

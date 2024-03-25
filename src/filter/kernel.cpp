@@ -1,5 +1,4 @@
-#include "kernel.h"
-
+#include <filter/kernel.h>
 
 Kernel::Kernel(KernelSize ksz): kernelsize(ksz){};
 
@@ -8,16 +7,16 @@ void Kernel::printKernel(){
     switch (kernelsize)
     {
     case KernelSize::ThreeXThree:
-        std::cout << "----------3x3 Kernel----------" << std::endl;
+        std::cout << "--------------------------3x3 Kernel------------------------" << std::endl;
         break;
     case KernelSize::FiveXFive:
-        std::cout << "----------5x5 Kernel----------" << std::endl;
+        std::cout << "--------------------------5x5 Kernel------------------------" << std::endl;
         break;
     case KernelSize::NineXNine:
-        std::cout << "----------9x9 Kernel----------" << std::endl;
+        std::cout << "--------------------------9x9 Kernel------------------------" << std::endl;
         break;
     case KernelSize::FifteenXFifteen:
-        std::cout << "----------15x15 Kernel--------" << std::endl;
+        std::cout << "--------------------------15x15 Kernel----------------------" << std::endl;
     default:
         std::cerr << "Error: Unknown kernel size " << std::endl;
         assert(false);
@@ -101,8 +100,6 @@ float Kernel::GaussianFunction(int x, int y, float sigma)
 
 float Kernel::GaussianSum(std::set<std::tuple<int, int>> kernel, float sigma){
     float sum = 0.0f;
-
-    
     for(const auto & point: kernel){
         int point0 = std::get<0>(point);
         int point1 = std::get<1>(point);

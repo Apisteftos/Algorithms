@@ -5,8 +5,7 @@
 #include <set>
 #include <tuple>
 #include <cmath>
-#include <opencv2/opencv.hpp>
-#include "definition.h"
+#include <definitions/definition.h>
 #define PI 3.1415
 
 class Kernel{
