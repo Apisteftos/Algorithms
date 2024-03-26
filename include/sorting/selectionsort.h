@@ -1,13 +1,17 @@
 #ifndef SELECTIONSORT_H
 #define SELECTIONSORT_H
+#include <iostream>
+#include <vector>
 
 
-class SelectioSort{
-
-private: 
+class SelectionSort{
 
 
 public: 
+
+    SelectionSort();
+    void selectionsort(std::vector<int> &arr);
+    ~SelectionSort();
 
 
 
