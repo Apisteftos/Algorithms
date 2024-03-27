@@ -3,6 +3,7 @@
 #include <sorting/quicksortfat.h>
 #include <sorting/bubblesort.h>
 #include <sorting/selectionsort.h>
+#include <sorting/insertionsort.h>
 #include <filter/convolution.h>
 #include <filter/lowpass.h>
 
@@ -53,6 +54,36 @@ int main(){
  
 
     std::vector<int> mergArr = {7, 8, 1, 0, 6, 10, 34, 5, 73, 12, 44};
+
+
+
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*                                Insertion Sort Algorithm                                         */
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+    std::vector<int> insertarr = {3, 1, 1, 0, 6, 23, 75, 27, 92, 85, 73};
+    std::cout <<"###################### Insertion Sort Algorithm #########################" << std::endl;
+    std::cout << "\nUnsorted Array: ";
+    for(int i = 0; i < insertarr.size(); i++){
+        std::cout << insertarr[i] << " ";
+    }
+
+    InsertionSort insertsort = InsertionSort();
+    insertsort.insertionsort(insertarr);
+
+    // Print the sorted array
+    std::cout << "\nSorted array: ";
+    for (int i = 0; i < insertarr.size(); i++) {
+        std::cout << insertarr[i] << " ";
+    }
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+
+
+
+
+
 
 
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/

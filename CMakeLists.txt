@@ -28,6 +28,7 @@ add_executable(main
               src/sorting/quicksorthoare.cpp 
               src/sorting/quicksortlomuto.cpp
               src/sorting/selectionsort.cpp
+              src/sorting/insertionsort.cpp
               src/filter/kernel.cpp
               src/filter/convolution.cpp 
               src/main.cpp
