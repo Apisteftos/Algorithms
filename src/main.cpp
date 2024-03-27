@@ -78,12 +78,12 @@ int main(){
     /*                                Insertion Sort Algorithm                                         */
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-    std::vector<int> insertarr = {3, 1, 1, 0, 6, 23, 75, 27, 92, 85, 73};
+    std::vector<int> insarr = {3, 1, 1, 0, 6, 23, 75, 27, 92, 85, 73};
     std::cout <<"###################### Insertion Sort Algorithm #########################" << std::endl;
-    help.unsortArray(insertarr);
+    help.unsortArray(insarr);
     InsertionSort insertsort = InsertionSort();
-    insertsort.insertionsort(insertarr);
-    help.sortArray(insertarr);
+    insertsort.insertionsort(insarr);
+    help.sortArray(insarr);
 
 
 

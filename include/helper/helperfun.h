@@ -9,7 +9,7 @@ public:
 
     Helper();
     void unsortArray(std::vector<int> &arr);
-    void sortArray(std::vector<int> & arr);
+    void sortArray(std::vector<int> &arr);
     ~Helper();
 
 

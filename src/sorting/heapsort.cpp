@@ -13,17 +13,17 @@ int end = count;
 
 while (end > 1){
     if (start > 0){
-        start -= start;
+        start -= 1;
     } else {
-        end -=end;
+        end -= 1;
         std::swap(arr[end], arr[0]);
     }
 
     int root = start;
-    while (root < end){
-        int child = root;
+    while (2 * root + 1 < end){
+        int child = 2 * root + 1;
 
-        if ( child + 1 && arr[child] < arr[child +1]){
+        if ( child + 1 < end && arr[child] < arr[child + 1]){
             child += 1;
         }
 
