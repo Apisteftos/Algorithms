@@ -2,6 +2,7 @@
 #include <sorting/quicksorthoare.h>
 #include <sorting/quicksortfat.h>
 #include <sorting/bubblesort.h>
+#include <sorting/selectionsort.h>
 #include <filter/convolution.h>
 #include <filter/lowpass.h>
 
@@ -59,12 +60,25 @@ int main(){
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 
-    std::vector<int> bubblevec = {5, 0, 5, 38, 999, 22, 8, 4, 11, 13, 16, 9};
+    std::vector<int> selectsort = {5, 2, 13, 93, 444, 22, 1, 4, 7, 33, 14, 7, 55};
 
     std::cout <<"###################### Selection Sort Algorithm #########################" << std::endl;
 
+    std::cout << "\nUnsorted Array: ";
+    for(int i = 0; i < selectsort.size(); i++){
+        std::cout << selectsort[i] << " ";
+    }
+    
+    SelectionSort slcSort = SelectionSort();
+    slcSort.selectionsort(selectsort, 0);
 
-
+    // Print the sorted array
+    std::cout << "\nSorted array: ";
+    for (int i = 0; i < selectsort.size(); i++) {
+        std::cout << selectsort[i] << " ";
+    }
+    std::cout << std::endl;
+    std::cout << std::endl;
 
 
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/

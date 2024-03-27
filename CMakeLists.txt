@@ -27,11 +27,15 @@ add_executable(main
               src/sorting/quicksortfat.cpp 
               src/sorting/quicksorthoare.cpp 
               src/sorting/quicksortlomuto.cpp
+              src/sorting/selectionsort.cpp
               src/filter/kernel.cpp
               src/filter/convolution.cpp 
               src/main.cpp
               ${HEADER_FILES})
 
+
+# Add debugging flags and additional warnings
+target_compile_options(main PUBLIC -g -Wall -Wextra)
 
 # Linking the libs
 target_link_libraries(main ${OpenCV_LIBS})

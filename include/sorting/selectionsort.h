@@ -10,7 +10,7 @@ class SelectionSort{
 public: 
 
     SelectionSort();
-    void selectionsort(std::vector<int> &arr);
+    void selectionsort(std::vector<int> &arr, int pos);
     ~SelectionSort();
 
 
