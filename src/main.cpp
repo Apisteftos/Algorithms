@@ -4,12 +4,17 @@
 #include <sorting/bubblesort.h>
 #include <sorting/selectionsort.h>
 #include <sorting/insertionsort.h>
+#include <sorting/heapsort.h>
 #include <filter/convolution.h>
 #include <filter/lowpass.h>
+#include <helper/helperfun.h>
 
 
 
 int main(){
+
+    Helper help;
+
 
 
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -55,6 +60,18 @@ int main(){
 
     std::vector<int> mergArr = {7, 8, 1, 0, 6, 10, 34, 5, 73, 12, 44};
 
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*                                Heap Sort Algorithm                                              */
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+    std::vector<int> heaparr = {19, 23, 1, 0, 6, 3, 48, 80, 3, 35, 91};
+    std::cout <<"####################### Heap Sort Algorithm #########################" << std::endl;
+    help.unsortArray(heaparr);
+    HeapSort heapsrt = HeapSort();
+    heapsrt.heapsort(heaparr);
+    help.sortArray(heaparr);
+    
+
 
 
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -63,24 +80,10 @@ int main(){
 
     std::vector<int> insertarr = {3, 1, 1, 0, 6, 23, 75, 27, 92, 85, 73};
     std::cout <<"###################### Insertion Sort Algorithm #########################" << std::endl;
-    std::cout << "\nUnsorted Array: ";
-    for(int i = 0; i < insertarr.size(); i++){
-        std::cout << insertarr[i] << " ";
-    }
-
+    help.unsortArray(insertarr);
     InsertionSort insertsort = InsertionSort();
     insertsort.insertionsort(insertarr);
-
-    // Print the sorted array
-    std::cout << "\nSorted array: ";
-    for (int i = 0; i < insertarr.size(); i++) {
-        std::cout << insertarr[i] << " ";
-    }
-    std::cout << std::endl;
-    std::cout << std::endl;
-
-
-
+    help.sortArray(insertarr);
 
 
 
@@ -94,22 +97,10 @@ int main(){
     std::vector<int> selectsort = {5, 2, 13, 93, 444, 22, 1, 4, 7, 33, 14, 7, 55};
 
     std::cout <<"###################### Selection Sort Algorithm #########################" << std::endl;
-
-    std::cout << "\nUnsorted Array: ";
-    for(int i = 0; i < selectsort.size(); i++){
-        std::cout << selectsort[i] << " ";
-    }
-    
+    help.unsortArray(selectsort);
     SelectionSort slcSort = SelectionSort();
     slcSort.selectionsort(selectsort, 0);
-
-    // Print the sorted array
-    std::cout << "\nSorted array: ";
-    for (int i = 0; i < selectsort.size(); i++) {
-        std::cout << selectsort[i] << " ";
-    }
-    std::cout << std::endl;
-    std::cout << std::endl;
+    help.sortArray(selectsort);
 
 
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/

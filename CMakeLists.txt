@@ -29,8 +29,10 @@ add_executable(main
               src/sorting/quicksortlomuto.cpp
               src/sorting/selectionsort.cpp
               src/sorting/insertionsort.cpp
+              src/sorting/heapsort.cpp
               src/filter/kernel.cpp
               src/filter/convolution.cpp 
+              src/helper/helperfun.cpp
               src/main.cpp
               ${HEADER_FILES})
 
