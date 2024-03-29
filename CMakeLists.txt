@@ -30,6 +30,7 @@ add_executable(main
               src/sorting/selectionsort.cpp
               src/sorting/insertionsort.cpp
               src/sorting/heapsort.cpp
+              src/sorting/countingsort.cpp
               src/filter/kernel.cpp
               src/filter/convolution.cpp 
               src/helper/helperfun.cpp
