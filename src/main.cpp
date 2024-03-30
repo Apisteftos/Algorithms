@@ -17,6 +17,9 @@ int main(){
     Helper help;
 
 
+    //@TODO optimize the code in main call each algorithm with args
+
+
 
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
     /*                                       Low Pass Filter                                           */
