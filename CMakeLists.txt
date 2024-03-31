@@ -34,6 +34,11 @@ add_executable(main
               src/sorting/pancakesort.cpp
               src/filter/kernel.cpp
               src/filter/convolution.cpp 
+              src/graph/BFS/bfs.cpp
+              src/graph/Dijkstra/dijkstra.cpp
+              src/graph/Dijkstra/edge.cpp
+              src/graph/Dijkstra/graph.cpp 
+              src/graph/Dijkstra/vertex.cpp 
               src/helper/helperfun.cpp
               src/main.cpp
               ${HEADER_FILES})

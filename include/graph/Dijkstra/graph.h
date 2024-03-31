@@ -1,13 +1,10 @@
 #ifndef GRAPH_H
 #define GRAPH_H
-
-
 #include <iostream>
 #include <vector>
 #include <map>
 
 
-using namespace std;
 
 
 class Graph{
@@ -19,9 +16,9 @@ class Graph{
 
     private:
 
-        vector<char>::iterator iter;
-        multimap<char, tuple<double, char>> conGrpaph; 
-        vector<char> vr;
+        std::vector<char>::iterator iter;
+        std::multimap<char, std::tuple<double, char>> conGrpaph; 
+        std::vector<char> vr;
         char pr;
         double dst;
 
@@ -41,7 +38,7 @@ class Graph{
          * @param prev Previous vertex
          * @param dist distance
          */
-        Graph(vector<char> vt, char prev, double dist);
+        Graph(std::vector<char> vt, char prev, double dist);
 
 
 
@@ -57,7 +54,7 @@ class Graph{
          * 
          * @return multimap<char, tuple<double, char>> 
          */
-        multimap<char, tuple<double, char>> graphConstructor();
+        std::multimap<char, std::tuple<double, char>> graphConstructor();
 
 
         /**
@@ -65,7 +62,7 @@ class Graph{
          * 
          * @return vector<char> 
          */
-        vector<char> getVertices();
+        std::vector<char> getVertices();
 
 
         

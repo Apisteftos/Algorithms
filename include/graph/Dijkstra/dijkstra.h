@@ -8,7 +8,6 @@
 #include <set>
 
 
-using namespace std;
 
 class Dijkstra {
 
@@ -34,17 +33,17 @@ private:
      * @brief mapping the vertex with the distance
      * 
      */
-    map<char, double> distance;
+    std::map<char, double> distance;
     /**
      * @brief mapping the current vertex with previous  
      * 
      */
-    map<char, char> previous;
+    std::map<char, char> previous;
     /**
      * @brief unvisited vertex
      * 
      */
-    set<char> unvisited;
+    std::set<char> unvisited;
 
 
 
@@ -73,7 +72,7 @@ public:
      * @param d 
      * @return ostream& 
      */
-    friend ostream & operator <<(ostream &out, const Dijkstra & d);
+    friend std::ostream & operator <<(std::ostream &out, const Dijkstra & d);
 
 
     /**

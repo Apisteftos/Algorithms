@@ -10,6 +10,11 @@
 #include <filter/convolution.h>
 #include <filter/lowpass.h>
 #include <helper/helperfun.h>
+#include <graph/Dijkstra/dijkstra.h>
+#include <graph/Dijkstra/edge.h>
+#include <graph/Dijkstra/vertex.h>
+#include <limits>
+#include <map>
 
 
 
@@ -19,6 +24,84 @@ int main(){
 
 
     //@TODO optimize the code in main call each algorithm with args
+
+
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*                                Dijkstra Algorithm                                               */
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+
+    std::vector<char> vertex;
+	vertex.push_back('A');
+	vertex.push_back('B');
+	vertex.push_back('C');
+	vertex.push_back('D');
+	vertex.push_back('E');
+	vertex.push_back('F');
+
+
+    std::multimap<char, std::tuple<char, double>> graphEdges;
+	graphEdges.insert(std::make_pair('A', std::make_tuple('B', 1)));
+	graphEdges.insert(std::make_pair('A', std::make_tuple('C', 5)));
+	graphEdges.insert(std::make_pair('A', std::make_tuple('D', 6)));
+	graphEdges.insert(std::make_pair('B', std::make_tuple('A', 1)));
+	graphEdges.insert(std::make_pair('B', std::make_tuple('D', 3)));
+	graphEdges.insert(std::make_pair('B', std::make_tuple('E', 4)));
+	graphEdges.insert(std::make_pair('C', std::make_tuple('A', 5)));
+	graphEdges.insert(std::make_pair('C', std::make_tuple('D', 2)));
+	graphEdges.insert(std::make_pair('D', std::make_tuple('A', 6)));
+	graphEdges.insert(std::make_pair('D', std::make_tuple('B', 3)));
+	graphEdges.insert(std::make_pair('D', std::make_tuple('C', 2)));
+	graphEdges.insert(std::make_pair('D', std::make_tuple('E', 7)));
+	graphEdges.insert(std::make_pair('D', std::make_tuple('F', 5)));
+	graphEdges.insert(std::make_pair('E', std::make_tuple('B', 4)));
+	graphEdges.insert(std::make_pair('E', std::make_tuple('D', 7)));
+	graphEdges.insert(std::make_pair('E', std::make_tuple('F', 2)));
+	graphEdges.insert(std::make_pair('F', std::make_tuple('D', 5)));
+	graphEdges.insert(std::make_pair('F', std::make_tuple('E', 2)));
+
+
+
+    double dist = std::numeric_limits<double>::infinity();
+	char previous = '\0';
+
+	VERTEX vert(vertex);
+	std::vector<char> graphVerteces = vert.getVertex();
+
+	EDGE edges = EDGE(graphEdges);
+	std::multimap<char, std::tuple<char, double>>  dijkstraEdges = edges.getEdges(); 
+
+	Graph dijkstraGraph =  Graph(graphVerteces, previous, dist);
+	//dijkstraGraph.printRowGraph();
+
+    Dijkstra path('A', dijkstraGraph, dijkstraEdges);
+	path.findPath();
+	path.printTheEdges();
+	//path.printShortestDistances();
+	//path.printShortestPath();
+	//path.printPreviousPath();
+
+	std::cout << path << std::endl;
+	path.chooseStartVertex('B');
+	std::cout << path << std::endl;
+    path.chooseStartVertex('C');
+    std::cout << path << std::endl;
+    
+
+
+
+
+
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*                                Depth first search Algorithm                                     */
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+
+
+
+
 
 
 

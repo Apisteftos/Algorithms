@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
 
 
 class VERTEX 
@@ -16,7 +15,7 @@ class VERTEX
      * @brief a vector of vertices
      * 
      */
-    vector<char> vertx;
+    std::vector<char> vertx;
 
 
     public: 
@@ -26,14 +25,14 @@ class VERTEX
          * 
          * @param vrt a vector of vertices
          */
-        VERTEX(const vector<char> vrt);
+        VERTEX(const std::vector<char> vrt);
 
         /**
          * @brief Get the Vertex object
          * 
          * @return vector<char> 
          */
-        vector<char> getVertex() const;
+        std::vector<char> getVertex() const;
 
         
 

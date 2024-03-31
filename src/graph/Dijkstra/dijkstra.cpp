@@ -1,4 +1,4 @@
-#include "dijkstra.h"
+#include <graph/Dijkstra/dijkstra.h>
 
 
 
@@ -12,27 +12,27 @@ Dijkstra::Dijkstra(char strVert, const Graph& gr, EDGE grEdg): startVertex(strVe
 void Dijkstra::findPath(){
 
 
-    multimap<char, tuple<double, char>> graphConstruct = graph.graphConstructor();
-    multimap<char, tuple<char, double>> edges = grEdg.getEdges();
+    std::multimap<char, std::tuple<double, char>> graphConstruct = graph.graphConstructor();
+    std::multimap<char, std::tuple<char, double>> edges = grEdg.getEdges();
     
     
 
 
 
-    cout << "Printing the Initialization: " << endl << endl;
+    std::cout << "Printing the Initialization: " << std::endl << std::endl;
 
     for (const auto & pair: graphConstruct) {
 
         char key = pair.first;
         auto& twoElements = pair.second;
-        double firstElement = get<0>(twoElements);
-        char secondElement = get<1>(twoElements);
+        double firstElement = std::get<0>(twoElements);
+        char secondElement = std::get<1>(twoElements);
 
 
         if (startVertex == key)
             firstElement = 0;
 
-        cout << "Vertex: " << key << " Distance: " << firstElement << " Previous: " << secondElement << endl;
+        std::cout << "Vertex: " << key << " Distance: " << firstElement << " Previous: " << secondElement << std::endl;
 
 
     }
@@ -40,7 +40,7 @@ void Dijkstra::findPath(){
 
 
 
-    cout << " " << endl;
+    std::cout << " " << std::endl;
 
 
 
@@ -48,7 +48,7 @@ void Dijkstra::findPath(){
 
         // if start vertex is equal to v then the distance is 0 otherwise is infinity
         // distance and previous working as a dictionaries
-        distance[v] = (v == startVertex) ? 0 : numeric_limits<double>::infinity();
+        distance[v] = (v == startVertex) ? 0 : std::numeric_limits<double>::infinity();
         previous[v] = '\0';
         unvisited.insert(v);
 
@@ -71,8 +71,8 @@ void Dijkstra::findPath(){
 
         for (const auto& edge : edges){
             char source = edge.first;
-            char target = get<0>(edge.second);
-            double weight = get<1>(edge.second);
+            char target = std::get<0>(edge.second);
+            double weight = std::get<1>(edge.second);
 
             if (source == currentVertex){
                 double alt = distance[currentVertex] + weight;
@@ -98,10 +98,10 @@ void Dijkstra::findPath(){
 void Dijkstra::printShortestDistances(){
 
     // Print shortest distances
-    cout << " " << endl;
-    cout << "Shortest distances from vertex " << startVertex << ":" << endl;
+    std::cout << " " << std::endl;
+    std::cout << "Shortest distances from vertex " << startVertex << ":" << std::endl;
     for (const auto& pair : distance) {
-        cout << "Distance to vertex " << pair.first << ": " << pair.second << endl;
+        std::cout << "Distance to vertex " << pair.first << ": " << pair.second << std::endl;
     }
 
 
@@ -110,17 +110,17 @@ void Dijkstra::printShortestDistances(){
 void Dijkstra::printShortestPath(){
 
     // print shortest paths
-    cout << " " << endl;
-    cout << "Shortest paths from vertex " << startVertex << ":" << endl;
+    std::cout << " " << std::endl;
+    std::cout << "Shortest paths from vertex " << startVertex << ":" << std::endl;
     for (const auto& pair : previous) {
         char vertex = pair.first;
-        string path = "";
+        std::string path = "";
         while (vertex != '\0') {
             path = vertex + path;
             vertex = previous[vertex];
         }
 
-        cout << "Path to vertex " << pair.first << ": " << path << endl;
+        std::cout << "Path to vertex " << pair.first << ": " << path << std::endl;
     }
 }
 
@@ -130,12 +130,12 @@ void Dijkstra::printShortestPath(){
 void Dijkstra::printPreviousPath(){
 
     // print previous path
-    cout << " " << endl;
-    cout << "Previous path from vertex " << endl; 
+    std::cout << " " << std::endl;
+    std::cout << "Previous path from vertex " << std::endl; 
     for(const auto& pair: previous){
         char vertex = pair.first;
 
-        cout << "Vertex: " << vertex << " Previous: " << previous[vertex] << endl;
+        std::cout << "Vertex: " << vertex << " Previous: " << previous[vertex] << std::endl;
 
 
     }
@@ -144,19 +144,19 @@ void Dijkstra::printPreviousPath(){
 
 void Dijkstra::printTheEdges(){
 
-    multimap<char, tuple<char, double>> edges = grEdg.getEdges();
+    std::multimap<char, std::tuple<char, double>> edges = grEdg.getEdges();
 
-        cout << "Printing the Edges: " << endl << endl;
+        std::cout << "Printing the Edges: " << std::endl << std::endl;
 
         for (const auto & pair: edges){
 
             char key = pair.first;
             const auto& Elements = pair.second;
-            char firstElement = get<0>(Elements);
-            double secondElement = get<1>(Elements);
+            char firstElement = std::get<0>(Elements);
+            double secondElement = std::get<1>(Elements);
 
 
-            cout << "Key: " << key << " AdjacentVertex: " << firstElement << " Weight: " << secondElement << endl;
+            std::cout << "Key: " << key << " AdjacentVertex: " << firstElement << " Weight: " << secondElement << std::endl;
 
         }
 
@@ -181,44 +181,44 @@ void Dijkstra::chooseStartVertex(const char & newVertex ) {
  * @param d 
  * @return ostream& 
  */
-ostream & operator << (ostream &out, const Dijkstra &d){
+std::ostream & operator << (std::ostream &out, const Dijkstra &d){
 
 
 
 // Print shortest distances
-cout << " " << endl;
-cout << "Shortest distances from vertex " << d.startVertex << ":" << endl;
+std::cout << " " << std::endl;
+std::cout << "Shortest distances from vertex " << d.startVertex << ":" << std::endl;
 for (const auto& pair : d.distance) {
-    out << "Distance to vertex " << pair.first << ": " << pair.second << endl;
+    out << "Distance to vertex " << pair.first << ": " << pair.second << std::endl;
 }
 
 
 
 // print shortest paths
-cout << " " << endl;
-cout << "Shortest paths from vertex " << d.startVertex << ":" << endl;
+std::cout << " " << std::endl;
+std::cout << "Shortest paths from vertex " << d.startVertex << ":" << std::endl;
 auto previous = d.previous;
 
 for (const auto& pair : previous) {
     char vertex = pair.first;
-    string path = "";
+    std::string path = "";
     while (vertex != '\0') {
         path = vertex + path;
         vertex = previous[vertex];
     }
 
-    out << "Path to vertex " << pair.first << ": " << path << endl;
+    out << "Path to vertex " << pair.first << ": " << path << std::endl;
 }
 
 
 
 // print previous path
-cout << " " << endl;
-cout << "Previous path from vertex " << endl; 
+std::cout << " " << std::endl;
+std::cout << "Previous path from vertex " << std::endl; 
 for(const auto& pair: previous){
     char vertex = pair.first;
 
-    out << "Vertex: " << vertex << " Previous: " << previous[vertex] << endl;
+    out << "Vertex: " << vertex << " Previous: " << previous[vertex] << std::endl;
 
 
 }
