@@ -15,6 +15,7 @@
 #include <graph/Dijkstra/vertex.h>
 #include <graph/DFS/graph.h>
 #include <graph/DFS/dfs.h>
+#include <graph/BFS/bfs.h>
 #include <limits>
 #include <map>
 #include <unordered_map>
@@ -109,7 +110,7 @@ int main(){
     graphdfs.addEdge('F', {'G'});
     graphdfs.addEdge('G', {'H', 'I'});
     graphdfs.addEdge('H', {'J'});
-    graphdfs.addEdge('I', {'I'});
+    graphdfs.addEdge('I', {'J'});
     graphdfs.addEdge('J', {});
 
 
@@ -121,7 +122,30 @@ int main(){
     std::cout << std::endl;
     
 
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*                                Breadth First Search Algorithm                                   */
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    std::cout <<"################### Breadth First Search Algorithm ######################" << std::endl;
+    std::unordered_map<char, std::vector<char>> adj;
+    adj['A'] = {'B', 'C', 'D'};
+    adj['B'] = {'D', 'E'};
+    adj['C'] = {'G'};
+    adj['D'] = {'F', 'G'};
+    adj['E'] = {'C', 'F'};
+    adj['F'] = {'G'};
+    adj['G'] = {'H', 'I'};
+    adj['H'] = {'J'};
+    adj['I'] = {'J'};
+    adj['J'] = {};
 
+    GraphBFS graphbfs(adj);
+    
+    BFS bfsObj;
+    bfsObj.setGraphBFS(graphbfs);
+    bfsObj.setStartNode('A');
+    bfsObj.setStartNode('B');
+    bfsObj.setStartNode('D');
+    std::cout << std::endl;
 
 
 

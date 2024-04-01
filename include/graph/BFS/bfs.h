@@ -1,12 +1,32 @@
-#ifndef DFS_H
-#define DFS_H
+#ifndef BFS_H
+#define BFS_H
+#include <iostream>
+#include <unordered_map>
+#include <vector>
+#include <queue>
+#include <graph/BFS/graph.h>
 
-class DFS{
 
+class BFS: public GraphBFS{
+
+    private:
+        std::unordered_map<char, bool> explored;
+        std::unordered_map<char, char> parent;
+        std::unordered_map<char, std::vector<char>> adjacent;
+        char startNode;
+
+
+    public: 
+
+        BFS();
+        void bfs(char root);
+        void setGraphBFS(const GraphBFS &graph);
+        void setStartNode(char newNode);
+        ~BFS();
 
 
 
 };
 
 
-#endif /* DFS_H */
+#endif /* BFS_H */
