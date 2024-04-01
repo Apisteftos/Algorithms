@@ -1,27 +1,15 @@
-#ifndef GRAPH_H
-#define GRAPH_H
-#include <iostream>
-#include <map>
-#include <list>
+#ifndef GRAPHDFS_H
+#define GRAPHDFS_H
+#include <graph/DFS/edges.h>
+class GraphDFS: public EdgesDFS{
 
-class GraphDFS{
-
-    private:
-
-        
-        
 
     public:
 
         GraphDFS();
-        std::map<char, bool> v;
-        std::map<char, std::list<char>> adjacent;
+        void addEdge(char v, std::vector<char> u);
         ~GraphDFS();
-
-
-
-
 
 };
 
-#endif /* GRAPH_H */
+#endif /* GRAPHDFS_H */

@@ -8,10 +8,6 @@
 
 
 class Graph{
-
-
-    protected:
-
     
 
     private:

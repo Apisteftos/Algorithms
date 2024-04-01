@@ -13,9 +13,11 @@
 #include <graph/Dijkstra/dijkstra.h>
 #include <graph/Dijkstra/edge.h>
 #include <graph/Dijkstra/vertex.h>
+#include <graph/DFS/graph.h>
+#include <graph/DFS/dfs.h>
 #include <limits>
 #include <map>
-
+#include <unordered_map>
 
 
 int main(){
@@ -30,7 +32,7 @@ int main(){
     /*                                Dijkstra Algorithm                                               */
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-
+    std::cout <<"###################### Dijkstra Algorithm ########################" << std::endl;
 
     std::vector<char> vertex;
 	vertex.push_back('A');
@@ -94,10 +96,30 @@ int main(){
 
 
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-    /*                                Depth first search Algorithm                                     */
+    /*                                Depth First Search Algorithm                                     */
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
+    std::cout <<"################### Depth First Search Algorithm ######################" << std::endl;
+    GraphDFS graphdfs;
+    graphdfs.addEdge('A', {'B', 'C', 'D'});
+    graphdfs.addEdge('B', {'D', 'E'});
+    graphdfs.addEdge('C', {'G'});
+    graphdfs.addEdge('D', {'F', 'G'});
+    graphdfs.addEdge('E', {'C', 'F'});
+    graphdfs.addEdge('F', {'G'});
+    graphdfs.addEdge('G', {'H', 'I'});
+    graphdfs.addEdge('H', {'J'});
+    graphdfs.addEdge('I', {'I'});
+    graphdfs.addEdge('J', {});
 
+
+    DFS dfsObj;
+    dfsObj.setGraphDFS(graphdfs);
+    dfsObj.dfs('A');
+    dfsObj.setStartNode('B');
+    dfsObj.setStartNode('D');
+    std::cout << std::endl;
+    
 
 
 

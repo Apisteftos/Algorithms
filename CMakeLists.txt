@@ -39,6 +39,9 @@ add_executable(main
               src/graph/Dijkstra/edge.cpp
               src/graph/Dijkstra/graph.cpp 
               src/graph/Dijkstra/vertex.cpp 
+              src/graph/DFS/dfs.cpp
+              src/graph/DFS/edges.cpp
+              src/graph/DFS/graph.cpp
               src/helper/helperfun.cpp
               src/main.cpp
               ${HEADER_FILES})
