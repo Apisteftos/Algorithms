@@ -18,6 +18,7 @@
 -Insertion sort <br>
 -Pancake sort <br>
 -Selection sort <br>
+-Radix sort <br>
 
 
 ## Filter Algorithms

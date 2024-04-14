@@ -32,6 +32,7 @@ add_executable(main
               src/sorting/heapsort.cpp
               src/sorting/countingsort.cpp
               src/sorting/pancakesort.cpp
+              src/sorting/radixsort.cpp
               src/filter/kernel.cpp
               src/filter/convolution.cpp 
               src/graph/Dijkstra/dijkstra.cpp
