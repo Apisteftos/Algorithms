@@ -25,8 +25,8 @@ int main(){
 
     Helper help;
 
-
     //@TODO optimize the code in main call each algorithm with args
+    
 
 
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -157,7 +157,7 @@ int main(){
 
 
 
-
+    //@TODO implementation of LOW Pass Filter
 
 
 
@@ -180,7 +180,7 @@ int main(){
     float normalize =  kernel.Normalize(threeXthreeKernel, sum, sigma);
     
 
-
+    //@TODO implementation of Gaussian Filter
 
 
 
@@ -189,6 +189,9 @@ int main(){
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
     /*                                Merge Sort Bottom Up Algorithm                                   */
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+    //@TODO implementation of Merge Sort Bottom Up Algorithm
+
 
 
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
